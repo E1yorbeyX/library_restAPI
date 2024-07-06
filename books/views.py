@@ -22,6 +22,18 @@ class BookDeleteApi(generics.DestroyAPIView):
     queryset = Books.objects.all()
     serializer_class = BookApi
 
+class BookCreate(generics.CreateAPIView):
+    queryset = Books.objects.all()
+    serializer_class = BookApi
+
+class BookLC(generics.ListCreateAPIView):
+    queryset = Books.objects.all()
+    serializer_class = BookApi
+
+class BookDUD(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Books.objects.all()
+    serializer_class = BookApi
+
 # ListApiView with function.
 @api_view(['GET'])
 def books_list(request):
