@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'books',
 
     #packages
-    'rest_framework'
+    'rest_framework',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
