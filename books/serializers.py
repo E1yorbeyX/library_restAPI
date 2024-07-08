@@ -21,18 +21,6 @@ class BookApi(serializers.ModelSerializer):
             )   
         return data
 
-
-
-
-
-
-
-
-
-
-
-
-
 class Payme(serializers.Serializer):
     cardNumber = serializers.IntegerField()
     cardName = serializers.CharField(max_length=50) 
