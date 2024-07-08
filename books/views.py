@@ -66,8 +66,8 @@ class BookUpdateApi(APIView):
             'book':serializer.data,
             }
             return Response(context, status=status.HTTP_200_OK)
-        elif Exception:
-            return Response({'status':False, "message":f'{Exception} xatoligi mavjud'}, status=status.HTTP_400_BAD_REQUEST)
+        else:
+            return Response({'status':False, "message":'xatolik mavjud'}, status=status.HTTP_400_BAD_REQUEST)
 
 # class BookDeleteApi(generics.DestroyAPIView):
 #     queryset = Books.objects.all()
@@ -98,6 +98,8 @@ class BookCreate(APIView):
                 "data":data,
             }
             return Response(context, status=status.HTTP_200_OK)
+        else:
+            return Response({'status':False, "message":serializer.errors})
 
 class BookLC(generics.ListCreateAPIView):
     queryset = Books.objects.all()
